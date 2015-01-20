@@ -1,0 +1,182 @@
+/* FONTS & STYLES */
+/*	CANTARELL
+	CHALK HAND LETTERING SHADED DEMO
+	DELICIOUS
+	JURA	*/
+
+@mixin font-src($name, $font, $file) {
+	src: url('../fonts/#{$font}-#{$file}-webfont.eot');
+	src: url('../fonts/#{$font}-#{$file}-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/#{$font}-#{$file}-webfont.woff2') format('woff2'),
+		 url('../fonts/#{$font}-#{$file}-webfont.woff') format('woff'),
+		 url('../fonts/#{$font}-#{$file}-webfont.ttf') format('truetype'),
+		 url('../fonts/#{$font}-#{$file}-webfont.svg##{$name}') format('svg');
+}
+
+@mixin font-face($name, $weight, $style) {
+	font-family: #{$name};
+	@include font-src($name, $font, $file);
+	font-weight: #{$weight};
+	font-style: #{$style};
+}
+
+
+/* CANTARELL FONT FAMILY */
+/* A font by Abattis -> abattis.org/cantarell */ 
+$name: 'Cantarell';
+$font: 'cantarell';
+
+/**REGULAR**/
+$file: 'regular';
+$weight: 'normal';
+$style: 'normal';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**BOLD**/
+$file: 'bold';
+$weight: 'bold';
+$style: 'normal';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**BOLD ITALIC**/
+$file: 'bolditalic';
+$weight: 'bold';
+$style: 'italic';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**ITALIC**/
+$file: 'italic';
+$weight: 'normal';
+$style: 'italic';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+
+/* CHALK HAND LETTERING SHADED DEMO FONT FAMILY */
+/* A font by Fonts Cafe -> www.fontscafe.com */ 
+/**REGULAR**/
+@font-face {
+    font-family: ChalkHandLettering;
+    src: url('../fonts/chalk-hand-lettering-shaded_demo.eot');
+    src: url('../fonts/chalk-hand-lettering-shaded_demo.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/chalk-hand-lettering-shaded_demo.woff') format('woff'),
+		 url('../fonts/chalk-hand-lettering-shaded_demo.ttf') format('truetype'),
+		 url('../fonts/chalk-hand-lettering-shaded_demo.svg#ChalkHandLettering') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* DELICIOUS FONT FAMILY */
+/* A font by Jos Buivenga (exljbris) -> www.exljbris.com */ 
+$name: 'Delicious';
+$font: 'delicious';
+
+/**REGULAR**/
+$file: 'roman';
+$weight: 'normal';
+$style: 'normal';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**BOLD**/
+$file: 'bold';
+$weight: 'bold';
+$style: 'normal';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**BOLD ITALIC**/
+$file: 'bolditalic';
+$weight: 'bold';
+$style: 'italic';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**ITALIC**/
+$file: 'italic';
+$weight: 'normal';
+$style: 'italic';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**SMALL-CAPS**/
+$file: 'smallcaps';
+
+@font-face {
+	font-family: #{$name};
+	@include font-src($name, $font, $file);
+	font-variant: small-caps;
+}
+
+/**HEAVY**/
+$name: 'DeliciousHeavy';
+$file: 'heavy';
+$weight: 'normal';
+$style: 'normal';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+
+
+/* JURA FONT FAMILY */
+/* A font by Ed Merritt (Ten by Twenty) -> www.tenbytwenty.com */ 
+$name: 'Jura';
+$font: 'jura';
+
+/**REGULAR**/
+$file: 'regular';
+$weight: 'normal';
+$style: 'normal';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**BOLD**/
+$file: 'bold';
+$weight: 'bold';
+$style: 'normal';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**BOLD ITALIC**/
+$file: 'bolditalic';
+$weight: 'bold';
+$style: 'italic';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}
+
+/**ITALIC**/
+$file: 'italic';
+$weight: 'normal';
+$style: 'italic';
+
+@font-face {
+	@include font-face($name, $weight, $style);
+}

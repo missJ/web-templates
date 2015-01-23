@@ -9,57 +9,83 @@
 ============== */
 
 body {
-	background: #CCC url(../img/argyle.png) top left repeat;
-	font: 16px/24px "deliciousroman", sans-serif;
-	color: #444;
-	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	color: #181818;
-	font-family: "juraregular", serif;
-	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
+	background: #CCC url(../img/symphony.png) top left repeat;
+	color: #404040;
+	font-family: Cantarell, sans-serif;
 }
 
 .container {
 	margin: 30px auto;
-	background: #FFF url() top left repeat;
-	padding-bottom: 20px;
+	border-radius: 15px;
+	box-shadow: 1px 1px 3px #555;
+	background-color: #f6f6e8;
+	padding: 10px 0;
 }
 
-header h1, h2, h3, h4, h5, h6 {
-	font-family: "jurabold", serif;
-	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
+header {
+	font-weight: bold;
+// need to add supplemental margin-top to nested H's based on their own height to make up height of .logo (below)
+// this sort of styling belongs in the Page Styles section??
 }
 
 main {
 }
 
-nav {
+.left {
+	float: left;
+	margin-right: 10px;
+}
+
+h1, h2, h3 {
+	font-family: Jura, serif;
+}
+
+h4, h5, h6 {
+	font-family: Cantarell, sans-serif;
+}
+
+h4 {
+	font-weight:normal;
+}
+
+h5 {
+	font-style: italic;
+}
+
+nav.vert {
 	background: #FFF url(../img/brushed.png) top left repeat;
 	border-radius: 4px 15px 15px 15px;
 	padding: 10px;
-	font: 14px/21px "CantarellRegular", sans-serif;
-	color: #444;
-	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
-	-webkit-text-size-adjust: 100%;
-	color: #969696;
+	color: #404040;
 }
 
-.project {
-	margin: 2px;
-	height: 100% !important;
-	border: dashed #D6D6D6 thin;
-	border-radius: 15px 4px 15px 15px;
-	padding: 3px;	
+nav.horiz {
+	text-align: right;
+	ul, ol {
+		display:block;
+		margin-bottom: 10px;
+		font-size: 1.4em;
+		li {
+			display:inline-block;
+			margin-left: 20px;
+		}
+	}
 }
+
+
+
+
 
 /* #Page Styles
 ================================================== */
 
+.logo {
+	background: #FFF url(../img/norwegian_rose.png) top left repeat;
+	border-radius: 15px 15px 4px 15px;
+	color: #404040;
+	height: 70px;
+	width: 70px;
+}
 
 
 /* #Media Queries
@@ -81,20 +107,3 @@ nav {
 	@media only screen and (max-width: 479px) {}
 
 
-/* #Font-Face
-================================================== */
-/* 	This is the proper syntax for an @font-face file
-		Just create a "fonts" folder at the root,
-		copy your FontName into code below and remove
-		comment brackets */
-
-/*	@font-face {
-	    font-family: 'FontName';
-	    src: url('../fonts/FontName.eot');
-	    src: url('../fonts/FontName.eot?iefix') format('eot'),
-	         url('../fonts/FontName.woff') format('woff'),
-	         url('../fonts/FontName.ttf') format('truetype'),
-	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
-	    font-weight: normal;
-	    font-style: normal; }
-*/

@@ -1,182 +1,202 @@
-/* FONTS & STYLES */
-/*	CANTARELL
-	CHALK HAND LETTERING SHADED DEMO
-	DELICIOUS
-	JURA	*/
+//fonts
+$font_0: Cantarell;
+$font_1: ChalkHandLettering;
+$font_2: Delicious;
+$font_3: DeliciousHeavy;
+$font_4: Jura;
 
-@mixin font-src($name, $font, $file) {
-	src: url('../fonts/#{$font}-#{$file}-webfont.eot');
-	src: url('../fonts/#{$font}-#{$file}-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/#{$font}-#{$file}-webfont.woff2') format('woff2'),
-		 url('../fonts/#{$font}-#{$file}-webfont.woff') format('woff'),
-		 url('../fonts/#{$font}-#{$file}-webfont.ttf') format('truetype'),
-		 url('../fonts/#{$font}-#{$file}-webfont.svg##{$name}') format('svg');
-}
-
-@mixin font-face($name, $weight, $style) {
-	font-family: #{$name};
-	@include font-src($name, $font, $file);
-	font-weight: #{$weight};
-	font-style: #{$style};
-}
-
-
-/* CANTARELL FONT FAMILY */
-/* A font by Abattis -> abattis.org/cantarell */ 
-$name: 'Cantarell';
-$font: 'cantarell';
-
-/**REGULAR**/
-$file: 'regular';
-$weight: 'normal';
-$style: 'normal';
-
-@font-face {
-	@include font-face($name, $weight, $style);
-}
-
-/**BOLD**/
-$file: 'bold';
-$weight: 'bold';
-$style: 'normal';
-
-@font-face {
-	@include font-face($name, $weight, $style);
-}
-
-/**BOLD ITALIC**/
-$file: 'bolditalic';
-$weight: 'bold';
-$style: 'italic';
-
-@font-face {
-	@include font-face($name, $weight, $style);
-}
-
-/**ITALIC**/
-$file: 'italic';
-$weight: 'normal';
-$style: 'italic';
-
-@font-face {
-	@include font-face($name, $weight, $style);
-}
-
-
-/* CHALK HAND LETTERING SHADED DEMO FONT FAMILY */
-/* A font by Fonts Cafe -> www.fontscafe.com */ 
-/**REGULAR**/
-@font-face {
-    font-family: ChalkHandLettering;
-    src: url('../fonts/chalk-hand-lettering-shaded_demo.eot');
-    src: url('../fonts/chalk-hand-lettering-shaded_demo.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/chalk-hand-lettering-shaded_demo.woff') format('woff'),
-		 url('../fonts/chalk-hand-lettering-shaded_demo.ttf') format('truetype'),
-		 url('../fonts/chalk-hand-lettering-shaded_demo.svg#ChalkHandLettering') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-/* DELICIOUS FONT FAMILY */
-/* A font by Jos Buivenga (exljbris) -> www.exljbris.com */ 
-$name: 'Delicious';
-$font: 'delicious';
-
-/**REGULAR**/
-$file: 'roman';
-$weight: 'normal';
-$style: 'normal';
-
-@font-face {
-	@include font-face($name, $weight, $style);
-}
-
-/**BOLD**/
-$file: 'bold';
-$weight: 'bold';
-$style: 'normal';
-
-@font-face {
-	@include font-face($name, $weight, $style);
-}
-
-/**BOLD ITALIC**/
-$file: 'bolditalic';
-$weight: 'bold';
-$style: 'italic';
+//urls
+$url_0: url("../fonts/cantarell-regular-webfont.eot");
+$url_1: url("../fonts/cantarell-regular-webfont.eot?#iefix");
+$url_2: url("../fonts/cantarell-regular-webfont.woff2");
+$url_3: url("../fonts/cantarell-regular-webfont.woff");
+$url_4: url("../fonts/cantarell-regular-webfont.ttf");
+$url_5: url("../fonts/cantarell-regular-webfont.svg#Cantarell");
+$url_6: url("../fonts/cantarell-bold-webfont.eot");
+$url_7: url("../fonts/cantarell-bold-webfont.eot?#iefix");
+$url_8: url("../fonts/cantarell-bold-webfont.woff2");
+$url_9: url("../fonts/cantarell-bold-webfont.woff");
+$url_10: url("../fonts/cantarell-bold-webfont.ttf");
+$url_11: url("../fonts/cantarell-bold-webfont.svg#Cantarell");
+$url_12: url("../fonts/cantarell-bolditalic-webfont.eot");
+$url_13: url("../fonts/cantarell-bolditalic-webfont.eot?#iefix");
+$url_14: url("../fonts/cantarell-bolditalic-webfont.woff2");
+$url_15: url("../fonts/cantarell-bolditalic-webfont.woff");
+$url_16: url("../fonts/cantarell-bolditalic-webfont.ttf");
+$url_17: url("../fonts/cantarell-bolditalic-webfont.svg#Cantarell");
+$url_18: url("../fonts/cantarell-italic-webfont.eot");
+$url_19: url("../fonts/cantarell-italic-webfont.eot?#iefix");
+$url_20: url("../fonts/cantarell-italic-webfont.woff2");
+$url_21: url("../fonts/cantarell-italic-webfont.woff");
+$url_22: url("../fonts/cantarell-italic-webfont.ttf");
+$url_23: url("../fonts/cantarell-italic-webfont.svg#Cantarell");
+$url_24: url("../fonts/chalk-hand-lettering-shaded_demo.eot");
+$url_25: url("../fonts/chalk-hand-lettering-shaded_demo.eot?#iefix");
+$url_26: url("../fonts/chalk-hand-lettering-shaded_demo.woff");
+$url_27: url("../fonts/chalk-hand-lettering-shaded_demo.ttf");
+$url_28: url("../fonts/chalk-hand-lettering-shaded_demo.svg#ChalkHandLettering");
+$url_29: url("../fonts/delicious-roman-webfont.eot");
+$url_30: url("../fonts/delicious-roman-webfont.eot?#iefix");
+$url_31: url("../fonts/delicious-roman-webfont.woff2");
+$url_32: url("../fonts/delicious-roman-webfont.woff");
+$url_33: url("../fonts/delicious-roman-webfont.ttf");
+$url_34: url("../fonts/delicious-roman-webfont.svg#Delicious");
+$url_35: url("../fonts/delicious-bold-webfont.eot");
+$url_36: url("../fonts/delicious-bold-webfont.eot?#iefix");
+$url_37: url("../fonts/delicious-bold-webfont.woff2");
+$url_38: url("../fonts/delicious-bold-webfont.woff");
+$url_39: url("../fonts/delicious-bold-webfont.ttf");
+$url_40: url("../fonts/delicious-bold-webfont.svg#Delicious");
+$url_41: url("../fonts/delicious-bolditalic-webfont.eot");
+$url_42: url("../fonts/delicious-bolditalic-webfont.eot?#iefix");
+$url_43: url("../fonts/delicious-bolditalic-webfont.woff2");
+$url_44: url("../fonts/delicious-bolditalic-webfont.woff");
+$url_45: url("../fonts/delicious-bolditalic-webfont.ttf");
+$url_46: url("../fonts/delicious-bolditalic-webfont.svg#Delicious");
+$url_47: url("../fonts/delicious-italic-webfont.eot");
+$url_48: url("../fonts/delicious-italic-webfont.eot?#iefix");
+$url_49: url("../fonts/delicious-italic-webfont.woff2");
+$url_50: url("../fonts/delicious-italic-webfont.woff");
+$url_51: url("../fonts/delicious-italic-webfont.ttf");
+$url_52: url("../fonts/delicious-italic-webfont.svg#Delicious");
+$url_53: url("../fonts/delicious-smallcaps-webfont.eot");
+$url_54: url("../fonts/delicious-smallcaps-webfont.eot?#iefix");
+$url_55: url("../fonts/delicious-smallcaps-webfont.woff2");
+$url_56: url("../fonts/delicious-smallcaps-webfont.woff");
+$url_57: url("../fonts/delicious-smallcaps-webfont.ttf");
+$url_58: url("../fonts/delicious-smallcaps-webfont.svg#Delicious");
+$url_59: url("../fonts/delicious-heavy-webfont.eot");
+$url_60: url("../fonts/delicious-heavy-webfont.eot?#iefix");
+$url_61: url("../fonts/delicious-heavy-webfont.woff2");
+$url_62: url("../fonts/delicious-heavy-webfont.woff");
+$url_63: url("../fonts/delicious-heavy-webfont.ttf");
+$url_64: url("../fonts/delicious-heavy-webfont.svg#DeliciousHeavy");
+$url_65: url("../fonts/jura-regular-webfont.eot");
+$url_66: url("../fonts/jura-regular-webfont.eot?#iefix");
+$url_67: url("../fonts/jura-regular-webfont.woff2");
+$url_68: url("../fonts/jura-regular-webfont.woff");
+$url_69: url("../fonts/jura-regular-webfont.ttf");
+$url_70: url("../fonts/jura-regular-webfont.svg#Jura");
+$url_71: url("../fonts/jura-bold-webfont.eot");
+$url_72: url("../fonts/jura-bold-webfont.eot?#iefix");
+$url_73: url("../fonts/jura-bold-webfont.woff2");
+$url_74: url("../fonts/jura-bold-webfont.woff");
+$url_75: url("../fonts/jura-bold-webfont.ttf");
+$url_76: url("../fonts/jura-bold-webfont.svg#Jura");
+$url_77: url("../fonts/jura-bolditalic-webfont.eot");
+$url_78: url("../fonts/jura-bolditalic-webfont.eot?#iefix");
+$url_79: url("../fonts/jura-bolditalic-webfont.woff2");
+$url_80: url("../fonts/jura-bolditalic-webfont.woff");
+$url_81: url("../fonts/jura-bolditalic-webfont.ttf");
+$url_82: url("../fonts/jura-bolditalic-webfont.svg#Jura");
+$url_83: url("../fonts/jura-italic-webfont.eot");
+$url_84: url("../fonts/jura-italic-webfont.eot?#iefix");
+$url_85: url("../fonts/jura-italic-webfont.woff2");
+$url_86: url("../fonts/jura-italic-webfont.woff");
+$url_87: url("../fonts/jura-italic-webfont.ttf");
+$url_88: url("../fonts/jura-italic-webfont.svg#Jura");
 
 @font-face {
-	@include font-face($name, $weight, $style);
+	font-family: $font_0;
+	src: $url_0;
+	src: $url_1 format("embedded-opentype"), $url_2 format("woff2"), $url_3 format("woff"), $url_4 format("truetype"), $url_5 format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
-
-/**ITALIC**/
-$file: 'italic';
-$weight: 'normal';
-$style: 'italic';
-
 @font-face {
-	@include font-face($name, $weight, $style);
+	font-family: $font_0;
+	src: $url_6;
+	src: $url_7 format("embedded-opentype"), $url_8 format("woff2"), $url_9 format("woff"), $url_10 format("truetype"), $url_11 format("svg");
+	font-weight: bold;
+	font-style: normal;
 }
-
-/**SMALL-CAPS**/
-$file: 'smallcaps';
-
 @font-face {
-	font-family: #{$name};
-	@include font-src($name, $font, $file);
+	font-family: $font_0;
+	src: $url_12;
+	src: $url_13 format("embedded-opentype"), $url_14 format("woff2"), $url_15 format("woff"), $url_16 format("truetype"), $url_17 format("svg");
+	font-weight: bold;
+	font-style: italic;
+}
+@font-face {
+	font-family: $font_0;
+	src: $url_18;
+	src: $url_19 format("embedded-opentype"), $url_20 format("woff2"), $url_21 format("woff"), $url_22 format("truetype"), $url_23 format("svg");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: $font_1;
+	src: $url_24;
+	src: $url_25 format("embedded-opentype"), $url_26 format("woff"), $url_27 format("truetype"), $url_28 format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: $font_2;
+	src: $url_29;
+	src: $url_30 format("embedded-opentype"), $url_31 format("woff2"), $url_32 format("woff"), $url_33 format("truetype"), $url_34 format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: $font_2;
+	src: $url_35;
+	src: $url_36 format("embedded-opentype"), $url_37 format("woff2"), $url_38 format("woff"), $url_39 format("truetype"), $url_40 format("svg");
+	font-weight: bold;
+	font-style: normal;
+}
+@font-face {
+	font-family: $font_2;
+	src: $url_41;
+	src: $url_42 format("embedded-opentype"), $url_43 format("woff2"), $url_44 format("woff"), $url_45 format("truetype"), $url_46 format("svg");
+	font-weight: bold;
+	font-style: italic;
+}
+@font-face {
+	font-family: $font_2;
+	src: $url_47;
+	src: $url_48 format("embedded-opentype"), $url_49 format("woff2"), $url_50 format("woff"), $url_51 format("truetype"), $url_52 format("svg");
+	font-weight: normal;
+	font-style: italic;
+}
+@font-face {
+	font-family: $font_2;
+	src: $url_53;
+	src: $url_54 format("embedded-opentype"), $url_55 format("woff2"), $url_56 format("woff"), $url_57 format("truetype"), $url_58 format("svg");
 	font-variant: small-caps;
 }
-
-/**HEAVY**/
-$name: 'DeliciousHeavy';
-$file: 'heavy';
-$weight: 'normal';
-$style: 'normal';
-
 @font-face {
-	@include font-face($name, $weight, $style);
+	font-family: $font_3;
+	src: $url_59;
+	src: $url_60 format("embedded-opentype"), $url_61 format("woff2"), $url_62 format("woff"), $url_63 format("truetype"), $url_64 format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
-
-
-
-/* JURA FONT FAMILY */
-/* A font by Ed Merritt (Ten by Twenty) -> www.tenbytwenty.com */ 
-$name: 'Jura';
-$font: 'jura';
-
-/**REGULAR**/
-$file: 'regular';
-$weight: 'normal';
-$style: 'normal';
-
 @font-face {
-	@include font-face($name, $weight, $style);
+	font-family: $font_4;
+	src: $url_65;
+	src: $url_66 format("embedded-opentype"), $url_67 format("woff2"), $url_68 format("woff"), $url_69 format("truetype"), $url_70 format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
-
-/**BOLD**/
-$file: 'bold';
-$weight: 'bold';
-$style: 'normal';
-
 @font-face {
-	@include font-face($name, $weight, $style);
+	font-family: $font_4;
+	src: $url_71;
+	src: $url_72 format("embedded-opentype"), $url_73 format("woff2"), $url_74 format("woff"), $url_75 format("truetype"), $url_76 format("svg");
+	font-weight: bold;
+	font-style: normal;
 }
-
-/**BOLD ITALIC**/
-$file: 'bolditalic';
-$weight: 'bold';
-$style: 'italic';
-
 @font-face {
-	@include font-face($name, $weight, $style);
+	font-family: $font_4;
+	src: $url_77;
+	src: $url_78 format("embedded-opentype"), $url_79 format("woff2"), $url_80 format("woff"), $url_81 format("truetype"), $url_82 format("svg");
+	font-weight: bold;
+	font-style: italic;
 }
-
-/**ITALIC**/
-$file: 'italic';
-$weight: 'normal';
-$style: 'italic';
-
 @font-face {
-	@include font-face($name, $weight, $style);
+	font-family: $font_4;
+	src: $url_83;
+	src: $url_84 format("embedded-opentype"), $url_85 format("woff2"), $url_86 format("woff"), $url_87 format("truetype"), $url_88 format("svg");
+	font-weight: normal;
+	font-style: italic;
 }

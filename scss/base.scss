@@ -1,105 +1,38 @@
-// LAYOUT TOOLS //
+//colors
+$white: #fff;
+$black: #000;
+$color_storm_dust_approx: #666;
+$color_fuscous_gray_approx: #555;
+$color_alto_approx: #ddd;
+$color_gallery_approx: #eee;
+$white_20: rgba(255, 255, 255, 0.2);
+$black_20: rgba(0, 0, 0, 0.2);
+$color_silver_chalice_approx: #aaa;
+$color_celeste_approx: #ccc;
+$color_tundora_approx: #444;
+$white_75: rgba(255, 255, 255, 0.75);
+$color_log_cabin_approx: #222;
+$white_30: rgba(255, 255, 255, 0.3);
+$black_30: rgba(0, 0, 0, 0.3);
+$color_suva_gray_approx: #888;
+$white_35: rgba(255, 255, 255, 0.35);
+$black_40: rgba(0, 0, 0, 0.4);
+$color_tapa_approx: #777;
 
-@function w-flex($px-target, $w-context) {
-	@return ($px-target / $w-context) * 100%;
-}
-@function f-flex($px-target, $f-context) {
-	@return ($px-target / $f-context) * 1em;
-}
+//fonts
+$font_0: Verdana;
+$font_1: Geneva;
+$font_2: sans-serif;
+$font_3: Georgia;
+$font_4: Times;
+$font_5: serif;
+$font_6: Helvetica;
+$font_7: Arial;
 
-$sides: top right bottom left;
-
-// THEME TOOLS //
-
-// Light - light bg tone, dark text tone
-// Dark - dark bg tone, light text tone
-$theme: light;
-$sans: 'Verdana, Geneva, sans-serif';
-$serif: 'Georgia, Times, serif';
-
-@mixin font($font, $size, $ital: false, $sml: false, $bold: false, $height: 1.25) {
-	@if $ital {
-		font-style: italic;
-	}
-	@if $sml {
-		font-variant: small-caps;
-	}
-	@if $bold {
-		font-weight: bold;
-	}
-	@if $size {
-		font-size: f-flex($size, $f-context);
-	} @else {
-		font-size: f-flex(16px, $f-context);
-	}
-	@if $height {
-		line-height: $height;
-	} @else {
-		line-height: 1.25;
-	}
-	@if $font {
-		font-family: #{$font};
-	} @else {
-		font-family: #{$sans};
-	}
-}
-
-@mixin text-size($font, $line, $marg: 10px) {
-	font-size: f-flex($font, $f-context);
-	line-height: $line;
-	margin-bottom: $marg;
-}
-
-@mixin font-fix {
-	-webkit-font-smoothing: antialiased; /* dark on light font fix */
-	-webkit-text-size-adjust: 100%; /* iPhone Safari font fix */
-}
-
-@mixin get-theme {
-	@if $theme == light {
-		background: #eee;
-		color: #222;
-	} @else if $theme == dark {
-		background: #222;
-		color: #fff;
-		@include font-fix;
-	} @else {
-		background: #fff;
-		color: #111;
-	}
-}
-
-// COLORS //
-
-$bg-color: #fff;
-$a-color: #ccc;
-$ah-color: #666;
-$hilite: #bfb4b4;
-$hiliter: #f3ede3;
-$p-color: #222;
-$h-color: #333;
-$hs-color: #555;
-
-/* === TABLE OF CONTENTS ===
-	#Reset & Basics
-	#Basic Styles
-	#Site Styles
-	#Typography
-	#Links
-	#Lists
-	#Images
-	#Buttons
-	#Forms
-	#Misc */
-
-
-/* === RESETS & BASICS === */
-
-$w-context: 960px;
-// Font - 62.5% of 16px so that CONTEXT is 10px!!
-$f-context: 10px;
-
-%reset {
+//@extend-elements
+//original selectors
+//html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+%extend_1 {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -107,396 +40,670 @@ $f-context: 10px;
 	vertical-align: baseline;
 }
 
+//original selectors
+//h1, h2, h3, h4, h5, h6
+%extend_2 {
+	font-size: 1.8em;
+	line-height: 1.25;
+	font-family: $font_3, $font_4, $font_5;
+}
+
+//original selectors
+//ul, ol
+%extend_3 {
+	font-size: 1.6em;
+	line-height: 1.5;
+	margin-bottom: 20px;
+}
+
+//original selectors
+//.button, button, input[type="submit"], input[type="reset"], input[type="button"]
+%extend_4 {
+	background: $color_gallery_approx;
+	background: $color_gallery_approx linear-gradient(top, $white_20 0, $black_20 100%);
+	border: 1px solid $color_silver_chalice_approx;
+	border-top: 1px solid $color_celeste_approx;
+	border-left: 1px solid $color_celeste_approx;
+	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+	border-radius: 3px;
+	color: $color_tundora_approx;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	//Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	text-shadow: 0 1px $white_75;
+	padding: 4px;
+}
+
+//original selectors
+//.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover
+%extend_5 {
+	color: $color_log_cabin_approx;
+	background: $color_alto_approx;
+	background: $color_alto_approx linear-gradient(top, $white_30 0, $black_30 100%);
+	border: 1px solid $color_suva_gray_approx;
+	border-top: 1px solid $color_silver_chalice_approx;
+	border-left: 1px solid $color_silver_chalice_approx;
+}
+
+//original selectors
+//.button:active, button:active, input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active
+%extend_6 {
+	border: 1px solid $color_storm_dust_approx;
+	background: $color_celeste_approx;
+	background: $color_celeste_approx linear-gradient(top, $white_35 0, $black_40 100%);
+}
+
+//original selectors
+//.button.full-width, button.full-width, input[type="submit"].full-width, input[type="reset"].full-width, input[type="button"].full-width
+%extend_7 {
+	width: 100%;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+//original selectors
+//input[type="text"], input[type="password"], input[type="email"], textarea, select
+%extend_8 {
+	border: 1px solid $color_celeste_approx;
+	padding: 4px;
+	outline: none;
+	//Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+	border-radius: 2px;
+	color: $color_tapa_approx;
+	background: $white;
+}
+
+//original selectors
+//input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus
+%extend_9 {
+	border: 1px solid $color_silver_chalice_approx;
+	color: $color_tundora_approx;
+	//Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 3px $black_20;
+}
+
+
 html {
-	@extend %reset;
+	@extend %extend_1;
 	font-size: 16px;
 }
 body {
-	@extend %reset;
+	@extend %extend_1;
 	font-size: 62.5%;
-	line-height: 1.25;
+	line-height: 1.5;
+	background: $white;
+	color: $black;
+	font-family: $font_0, $font_1, $font_2;
 }
-div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	@extend %reset;
+div {
+	@extend %extend_1;
 }
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+span {
+	@extend %extend_1;
 }
-ol, ul {
-	list-style: none;
+applet {
+	@extend %extend_1;
 }
-blockquote, q {
-	quotes: none;
-	&:before, &:after {
-		content: '';
-		content: none;
-	}
+object {
+	@extend %extend_1;
 }
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+iframe {
+	@extend %extend_1;
 }
-
-
-/* === FOUNDATION STYLES === */
- 
-$font: '"DeliciousReg", #{$sans}';
-
-body {
-	@include get-theme;
-	@include font(#{$font}, 16px);
-	color: $p-color;
-}
-
-/*	body {
-		background: #fff;
-		font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: #444;
- }*/
- 
-.container {
-	background: $bg-color;
-}
- 
-
-/* === TYPOGRAPHY === */
-
-$font: '"JuraReg", #{$serif}';
-
-h1, h2, h3, h4, h5, h6 {
-	color: $h-color;
-	@include font(#{$font}, 18px);
+h1 {
+	@extend %extend_1;
+	@extend %extend_2;
+	font-size: 4.2em;
+	line-height: 1.1;
+	margin-bottom: 15px;
 	a {
 		font-weight: inherit;
 	}
 }
-h1 {
-	@include text-size(40px, 1.1, 15px);
-}
 h2 {
-	@include text-size(36px, 1.1);
+	@extend %extend_1;
+	@extend %extend_2;
+	font-size: 2.6em;
+	line-height: 1.1;
+	margin-bottom: 10px;
+	a {
+		font-weight: inherit;
+	}
 }
 h3 {
-	@include text-size(30px, 1.2);
+	@extend %extend_1;
+	@extend %extend_2;
+	font-size: 2em;
+	line-height: 1.2;
+	margin-bottom: 10px;
+	a {
+		font-weight: inherit;
+	}
 }
 h4 {
-	@include text-size(26px, 1.25);
+	@extend %extend_1;
+	@extend %extend_2;
+	font-size: 2em;
+	line-height: 1.25;
+	margin-bottom: 10px;
+	a {
+		font-weight: inherit;
+	}
 }
 h5 {
-	@include text-size(20px, 1.3, 5px);
+	@extend %extend_1;
+	@extend %extend_2;
+	font-size: 1.6em;
+	line-height: 1.3;
+	margin-bottom: 5px;
+	a {
+		font-weight: inherit;
+	}
 }
 h6 {
-	@include text-size(18px, 1.4, 5px);
+	@extend %extend_1;
+	@extend %extend_2;
+	font-size: 1.3em;
+	line-height: 1.4;
+	margin-bottom: 5px;
+	a {
+		font-weight: inherit;
+	}
 }
-.subheader {
-	color: $hs-color;
-}
-
-/*	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
-	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
-	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
-	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
-	h5 { font-size: 17px; line-height: 24px; }
-	h6 { font-size: 14px; line-height: 21px; }
-*/
-
 p {
+	@extend %extend_1;
+	font-size: 1.6em;
+	line-height: 1.5;
 	margin-bottom: 20px;
 	img {
 		margin: 0;
 	}
 	&.lead {
-		@include text-size(20px, 1.3, 20px);
-		color: $hilite;
+		font-size: 2em;
+		line-height: 1.3;
+		margin-bottom: 20px;
 	}
 }
-		
-/*	p { margin: 0 0 20px 0; }
-	p img { margin: 0; }
-	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
-*/
-	em { font-style: italic; }
-	strong { font-weight: bold; color: $h-color; }
-	small { font-size: 80%; }
-
-/*	Blockquotes  */
-
-%qt {
-	@include text-size(18px, 1.45, 20px);
-	font-style: italic;
-	color: $ah-color;
-}
-
 blockquote {
-	@extend %qt;
-	padding: 9px 20px 0 19px; border-left: 1px dotted $hiliter;
+	@extend %extend_1;
+	quotes: none;
+	font-size: 1.8em;
+	line-height: 1.45;
+	margin-bottom: 20px;
+	font-style: italic;
+	padding: 9px 20px 0 19px;
+	border-left: 1px dotted $color_storm_dust_approx;
+	&:before {
+		content: '';
+		content: none;
+	}
+	&:after {
+		content: '';
+		content: none;
+	}
 	cite {
 		display: block;
-		font-size: f-flex(14px, 18px);
-		color: #555;
+		font-size: 0.77778em;
+		color: $color_fuscous_gray_approx;
 		&:before {
 			content: "\2014 \0020";
 		}
-		a {
-			&:visited {
-				color: #555;
-			}
+		a:visited {
+			color: $color_fuscous_gray_approx;
 		}
 	}
 }
-
-hr {
-	border: solid $a-color;
-	border-width: 1px 0 0;
-	clear: both;
-	margin: 10px 0 30px;
-	height: 0;
+pre {
+	@extend %extend_1;
 }
-		
-/*	blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
-	blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
-	blockquote cite { display: block; font-size: 12px; color: #555; }
-	blockquote cite:before { content: "\2014 \0020"; }
-	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
-
-	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
-*/
-
-/* #Links
-================================================== */
-
 a {
-	color: $a-color;
+	@extend %extend_1;
 	text-decoration: underline;
 	outline: 0;
-	&:visited {
-		color: $hilite;
-	}
-	&:hover, &:focus {
-		color: $ah-color;
-	}
 }
-
-/*	a, a:visited { color: #333; text-decoration: underline; outline: 0; }
-	a:hover, a:focus { color: #000; }
-	p a, p a:visited { line-height: inherit; }
-*/
-
-/* #Lists
-================================================== */
-
-$lists: square circle disc;
-
-ul, ol { margin-bottom: 20px; }
-ul {
-	list-style: none outside;
-	@each $list in $lists {
-		.#{$list} {
-			list-style: #{$list} outside;
-			margin-left: 30px;
-		}
-	}
+abbr {
+	@extend %extend_1;
 }
-ol { list-style: decimal; margin-left: 30px; }
-ul ul, ul ol,
-ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
-ul ul li, ul ol li,
-ol ol li, ol ul li { margin-bottom: 6px; }
-li { line-height: 18px; margin-bottom: 12px; }
-ul.large li { line-height: 21px; }
-li p { line-height: 21px; }
-	
-
-
-/*	ul, ol { margin-bottom: 20px; }
-	ul { list-style: none outside; }
-	ol { list-style: decimal; }
-	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
-	ul.square { list-style: square outside; }
-	ul.circle { list-style: circle outside; }
-	ul.disc { list-style: disc outside; }
-	ul ul, ul ol,
-	ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
-	ul ul li, ul ol li,
-	ol ol li, ol ul li { margin-bottom: 6px; }
-	li { line-height: 18px; margin-bottom: 12px; }
-	ul.large li { line-height: 21px; }
-	li p { line-height: 21px; }
-*/
-
-/* #Images
-================================================== */
-
+acronym {
+	@extend %extend_1;
+}
+address {
+	@extend %extend_1;
+}
+big {
+	@extend %extend_1;
+}
+cite {
+	@extend %extend_1;
+}
+code {
+	@extend %extend_1;
+}
+del {
+	@extend %extend_1;
+}
+dfn {
+	@extend %extend_1;
+}
+em {
+	@extend %extend_1;
+	font-style: italic;
+}
 img {
+	@extend %extend_1;
 	.scale {
 		max-width: 100%;
 		height: auto;
-		@each $side in $sides {
-			&.#{$side} {
-				margin-#{$side}: 5px;
-			}
+		&.top {
+			margin-top: 5px;
+		}
+		&.right {
+			margin-right: 5px;
+		}
+		&.bottom {
+			margin-bottom: 5px;
+		}
+		&.left {
+			margin-left: 5px;
 		}
 	}
 }
-
-
-/* #Buttons
-================================================== */
-
-@mixin btn-grad($col, $r1c, $r1o, $r2c, $r2o) {
-	background: $col; /* Old browsers */
-	background: $col -moz-linear-gradient(top, rgba($r1c,$r1c,$r1c,$r1o) 0%, rgba($r2c,$r2c,$r2c,$r2o) 100%); /* FF3.6+ */
-	background: $col -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($r1c,$r1c,$r1c,$r1o)), color-stop(100%,rgba($r2c,$r2c,$r2c,$r2o))); /* Chrome,Safari4+ */
-	background: $col -webkit-linear-gradient(top, rgba($r1c,$r1c,$r1c,$r1o) 0%,rgba($r2c,$r2c,$r2c,$r2o) 100%); /* Chrome10+,Safari5.1+ */
-	background: $col -o-linear-gradient(top, rgba($r1c,$r1c,$r1c,$r1o) 0%,rgba($r2c,$r2c,$r2c,$r2o) 100%); /* Opera11.10+ */
-	background: $col -ms-linear-gradient(top, rgba($r1c,$r1c,$r1c,$r1o) 0%,rgba($r2c,$r2c,$r2c,$r2o) 100%); /* IE10+ */
-	background: $col linear-gradient(top, rgba($r1c,$r1c,$r1c,$r1o) 0%,rgba($r2c,$r2c,$r2c,$r2o) 100%); /* W3C */
+ins {
+	@extend %extend_1;
 }
-
-
-	.button,
-	button,
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"] {
-		@include btn-grad(#eee, 255, .2, 0, .2);
-/*		background: #eee; /* Old browsers */
-/*		background: #eee -moz-linear-gradient(top, rgba(255,255,255,.2) 0%, rgba(0,0,0,.2) 100%); /* FF3.6+ */
-/*		background: #eee -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.2)), color-stop(100%,rgba(0,0,0,.2))); /* Chrome,Safari4+ */
-/*		background: #eee -webkit-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Chrome10+,Safari5.1+ */
-/*		background: #eee -o-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* Opera11.10+ */
-/*		background: #eee -ms-linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* IE10+ */
-/*		background: #eee linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
-	  border: 1px solid #aaa;
-	  border-top: 1px solid #ccc;
-	  border-left: 1px solid #ccc;
-	  -moz-border-radius: 3px;
-	  -webkit-border-radius: 3px;
-	  border-radius: 3px;
-	  color: #444;
-	  display: inline-block;
-	  font-size: 11px;
-	  font-weight: bold;
-	  text-decoration: none;
-	  text-shadow: 0 1px rgba(255, 255, 255, .75);
-	  cursor: pointer;
-	  margin-bottom: 20px;
-	  line-height: normal;
-	  padding: 8px 10px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-	.button:hover,
-	button:hover,
-	input[type="submit"]:hover,
-	input[type="reset"]:hover,
-	input[type="button"]:hover {
-		color: #222;
-		background: #ddd; /* Old browsers */
-		background: #ddd -moz-linear-gradient(top, rgba(255,255,255,.3) 0%, rgba(0,0,0,.3) 100%); /* FF3.6+ */
-		background: #ddd -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.3)), color-stop(100%,rgba(0,0,0,.3))); /* Chrome,Safari4+ */
-		background: #ddd -webkit-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Chrome10+,Safari5.1+ */
-		background: #ddd -o-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* Opera11.10+ */
-		background: #ddd -ms-linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* IE10+ */
-		background: #ddd linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
-	  border: 1px solid #888;
-	  border-top: 1px solid #aaa;
-	  border-left: 1px solid #aaa; }
-
-	.button:active,
-	button:active,
-	input[type="submit"]:active,
-	input[type="reset"]:active,
-	input[type="button"]:active {
-		border: 1px solid #666;
-		background: #ccc; /* Old browsers */
-		background: #ccc -moz-linear-gradient(top, rgba(255,255,255,.35) 0%, rgba(10,10,10,.4) 100%); /* FF3.6+ */
-		background: #ccc -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,.35)), color-stop(100%,rgba(10,10,10,.4))); /* Chrome,Safari4+ */
-		background: #ccc -webkit-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Chrome10+,Safari5.1+ */
-		background: #ccc -o-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* Opera11.10+ */
-		background: #ccc -ms-linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* IE10+ */
-		background: #ccc linear-gradient(top, rgba(255,255,255,.35) 0%,rgba(10,10,10,.4) 100%); /* W3C */ }
-
-	.button.full-width,
-	button.full-width,
-	input[type="submit"].full-width,
-	input[type="reset"].full-width,
-	input[type="button"].full-width {
-		width: 100%;
-		padding-left: 0 !important;
-		padding-right: 0 !important;
-		text-align: center; }
-
-	/* Fix for odd Mozilla border & padding issues */
-	button::-moz-focus-inner,
-	input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+kbd {
+	@extend %extend_1;
+}
+q {
+	@extend %extend_1;
+	quotes: none;
+	&:before {
+		content: '';
+		content: none;
 	}
-
-
-/* #Forms
-================================================== */
-
-	form {
-		margin-bottom: 20px; }
-	fieldset {
-		margin-bottom: 20px; }
-	input[type="text"],
-	input[type="password"],
-	input[type="email"],
-	textarea,
-	select {
-		border: 1px solid #ccc;
-		padding: 6px 4px;
-		outline: none;
-		-moz-border-radius: 2px;
-		-webkit-border-radius: 2px;
-		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: #777;
-		margin: 0;
-		width: 210px;
-		max-width: 100%;
-		display: block;
-		margin-bottom: 20px;
-		background: #fff; }
-	select {
-		padding: 0; }
-	input[type="text"]:focus,
-	input[type="password"]:focus,
-	input[type="email"]:focus,
-	textarea:focus {
-		border: 1px solid #aaa;
- 		color: #444;
- 		-moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
-		-webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
-		box-shadow:  0 0 3px rgba(0,0,0,.2); }
-	textarea {
-		min-height: 60px; }
-	label,
-	legend {
-		display: block;
-		font-weight: bold;
-		font-size: 13px;  }
-	select {
-		width: 220px; }
-	input[type="checkbox"] {
-		display: inline; }
-	label span,
-	legend span {
-		font-weight: normal;
-		font-size: 13px;
-		color: #444; }
-
-/* #Misc
-================================================== */
-
-summary:focus {
-	outline: none;
+	&:after {
+		content: '';
+		content: none;
+	}
 }
-	
-	.remove-bottom { margin-bottom: 0 !important; }
-	.half-bottom { margin-bottom: 10px !important; }
-	.add-bottom { margin-bottom: 20px !important; }
-
-
+s {
+	@extend %extend_1;
+}
+samp {
+	@extend %extend_1;
+}
+small {
+	@extend %extend_1;
+	font-size: 80%;
+}
+strike {
+	@extend %extend_1;
+}
+strong {
+	@extend %extend_1;
+	font-weight: bold;
+}
+sub {
+	@extend %extend_1;
+}
+sup {
+	@extend %extend_1;
+}
+tt {
+	@extend %extend_1;
+}
+var {
+	@extend %extend_1;
+}
+b {
+	@extend %extend_1;
+}
+u {
+	@extend %extend_1;
+}
+i {
+	@extend %extend_1;
+}
+center {
+	@extend %extend_1;
+}
+dl {
+	@extend %extend_1;
+}
+dt {
+	@extend %extend_1;
+}
+dd {
+	@extend %extend_1;
+}
+ol {
+	@extend %extend_1;
+	list-style: none;
+	@extend %extend_3;
+	list-style: decimal;
+	margin-left: 30px;
+	ol {
+		margin: 4px 0 5px 30px;
+		font-size: 90%;
+		li {
+			margin-bottom: 6px;
+		}
+	}
+	ul {
+		margin: 4px 0 5px 30px;
+		font-size: 90%;
+		li {
+			margin-bottom: 6px;
+		}
+	}
+}
+ul {
+	@extend %extend_1;
+	list-style: none;
+	@extend %extend_3;
+	list-style: none outside;
+	.square {
+		list-style: square outside;
+		margin-left: 30px;
+	}
+	.circle {
+		list-style: circle outside;
+		margin-left: 30px;
+	}
+	.disc {
+		list-style: disc outside;
+		margin-left: 30px;
+	}
+	ul {
+		margin: 4px 0 5px 30px;
+		font-size: 90%;
+		li {
+			margin-bottom: 6px;
+		}
+	}
+	ol {
+		margin: 4px 0 5px 30px;
+		font-size: 90%;
+		li {
+			margin-bottom: 6px;
+		}
+	}
+	&.large li {
+		line-height: 21px;
+	}
+}
+li {
+	@extend %extend_1;
+	line-height: 18px;
+	margin-bottom: 12px;
+	p {
+		line-height: 21px;
+	}
+}
+fieldset {
+	@extend %extend_1;
+}
+form {
+	@extend %extend_1;
+}
+label {
+	@extend %extend_1;
+	font-weight: bold;
+	display: block;
+	span {
+		font-weight: normal;
+		color: $color_tundora_approx;
+	}
+}
+legend {
+	@extend %extend_1;
+	font-weight: bold;
+	display: block;
+	span {
+		font-weight: normal;
+		color: $color_tundora_approx;
+	}
+}
+table {
+	@extend %extend_1;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+caption {
+	@extend %extend_1;
+}
+tbody {
+	@extend %extend_1;
+}
+tfoot {
+	@extend %extend_1;
+}
+thead {
+	@extend %extend_1;
+}
+tr {
+	@extend %extend_1;
+}
+th {
+	@extend %extend_1;
+}
+td {
+	@extend %extend_1;
+}
+article {
+	@extend %extend_1;
+	display: block;
+}
+aside {
+	@extend %extend_1;
+	display: block;
+}
+canvas {
+	@extend %extend_1;
+}
+details {
+	@extend %extend_1;
+	display: block;
+}
+embed {
+	@extend %extend_1;
+}
+figure {
+	@extend %extend_1;
+	display: block;
+}
+figcaption {
+	@extend %extend_1;
+	display: block;
+}
+footer {
+	@extend %extend_1;
+	display: block;
+	p {
+		font-size: 1.2em;
+		line-height: 1.2;
+		margin-bottom: 10px;
+	}
+	input {
+		font-size: 1.4em;
+	}
+}
+header {
+	@extend %extend_1;
+	display: block;
+}
+hgroup {
+	@extend %extend_1;
+	display: block;
+}
+menu {
+	@extend %extend_1;
+	display: block;
+}
+nav {
+	@extend %extend_1;
+	display: block;
+}
+output {
+	@extend %extend_1;
+}
+ruby {
+	@extend %extend_1;
+}
+section {
+	@extend %extend_1;
+	display: block;
+}
+summary {
+	@extend %extend_1;
+	&:focus {
+		outline: none;
+	}
+}
+time {
+	@extend %extend_1;
+}
+mark {
+	@extend %extend_1;
+}
+audio {
+	@extend %extend_1;
+}
+video {
+	@extend %extend_1;
+}
+.container {
+	background: $white;
+}
+hr {
+	border: solid $color_alto_approx;
+	border-width: 1px 0 0;
+	clear: both;
+	margin: 10px 0;
+	height: 0;
+}
+.button {
+	@extend %extend_4;
+	&:hover {
+		@extend %extend_5;
+	}
+	&:active {
+		@extend %extend_6;
+	}
+	&.full-width {
+		@extend %extend_7;
+	}
+}
+button {
+	@extend %extend_4;
+	&:hover {
+		@extend %extend_5;
+	}
+	&:active {
+		@extend %extend_6;
+	}
+	&.full-width {
+		@extend %extend_7;
+	}
+}
+input[type="submit"] {
+	@extend %extend_4;
+	&:hover {
+		@extend %extend_5;
+	}
+	&:active {
+		@extend %extend_6;
+	}
+	&.full-width {
+		@extend %extend_7;
+	}
+}
+input[type="reset"] {
+	@extend %extend_4;
+	&:hover {
+		@extend %extend_5;
+	}
+	&:active {
+		@extend %extend_6;
+	}
+	&.full-width {
+		@extend %extend_7;
+	}
+}
+input[type="button"] {
+	@extend %extend_4;
+	&:hover {
+		@extend %extend_5;
+	}
+	&:active {
+		@extend %extend_6;
+	}
+	&.full-width {
+		@extend %extend_7;
+	}
+}
+input {
+	font-size: 1.6em;
+	font-family: $font_6, $font_7, $font_2;
+	&.full {
+		display: block;
+		width: 100%;
+	}
+}
+textarea {
+	font-size: 1.6em;
+	font-family: $font_6, $font_7, $font_2;
+	font-size: 1.4em;
+	@extend %extend_8;
+	&:focus {
+		@extend %extend_9;
+	}
+	&.full {
+		display: block;
+		width: 100%;
+	}
+}
+input[type="text"] {
+	@extend %extend_8;
+	&:focus {
+		@extend %extend_9;
+	}
+}
+input[type="password"] {
+	@extend %extend_8;
+	&:focus {
+		@extend %extend_9;
+	}
+}
+input[type="email"] {
+	@extend %extend_8;
+	&:focus {
+		@extend %extend_9;
+	}
+}
+select {
+	@extend %extend_8;
+	padding: 0;
+	width: 220px;
+}
+input[type="checkbox"] {
+	display: inline;
+}
+.remove-bottom {
+	margin-bottom: 0 !important;
+}
+.half-bottom {
+	margin-bottom: 10px !important;
+}
+.add-bottom {
+	margin-bottom: 20px !important;
+}
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}

@@ -1,235 +1,340 @@
-/* FONT CONVERSION: 1em = 10px
-============================== */
-
-html { font-size: 16px; }
-body { font-size: 62.5%; }
-
-$font-main: 10px;
-
-/* BASE GRID
-============ */
-
-$con: '.container';
-$col: '.column';
-$r: 'right';
-$l: 'left';
-
-@mixin marg($side,$m) {
-	margin-#{$side}: $m / $w-main * 100%;
-}
-
-
-@mixin	width($w,$m) {
-	width: $w / $m * 100%;
-}
-@mixin column($w) {
-	@include width($w, $w-main);
-}
-
-/* DESKTOP: relative to 960px (max-width) */
-$w-main: 960px;
-$marg: 10px;
-
-
-#{$con} {
-	position: relative; width: 75%; max-width: #{$w-main}; margin: 0 auto; padding: 0;
-	#{$col} {
-		float: left; display: inline; @include marg($r,$marg); @include marg($l,$marg);
-		&.one { @include column(40px); }
-		&.two { @include column(100px); }
-		&.three { @include column(160px); }
-		&.four { @include column(220px); }
-		&.five { @include column(280px); }
-		&.six { @include column(340px); }
-		&.seven { @include column(400px); }
-		&.eight { @include column(460px); }
-		&.nine { @include column(520px); }
-		&.ten { @include column(580px); }
-		&.eleven { @include column(640px); }
-		&.twelve { @include column(700px); }
-		&.thirteen { @include column(760px); }
-		&.fourteen { @include column(820px); }
-		&.fifteen { @include column(880px); }
-		&.sixteen { @include column(940px); }
-		&.one-third { @include column(300px); }
-		&.two-thirds { @include column(620px); }
-	}
-}
-#{$col} {
-	&.alpha { margin-left: 0; }
-	&.omega { margin-right: 0; }
-}
-.row { margin-bottom: 20px / $w-main * 100%; }
-			
-
-/* TABLET(Portrait): 768px-959px
-================================= */
-
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-	
-$w-main: 768px;
-
-#{$con} {
-	width: 80%; max-width: #{$w-main};
-	#{$col} {
-		@include marg($r,$marg); @include marg($l,$marg);
-		&.one { @include column(28px); }
-		&.two { @include column(76px); }
-		&.three { @include column(124px); }
-		&.four { @include column(172px); }
-		&.five { @include column(220px); }
-		&.six { @include column(268px); }
-		&.seven { @include column(316px); }
-		&.eight { @include column(364px); }
-		&.nine { @include column(412px); }
-		&.ten { @include column(460px); }
-		&.eleven { @include column(508px); }
-		&.twelve { @include column(556px); }
-		&.thirteen { @include column(604px); }
-		&.fourteen { @include column(652px); }
-		&.fifteen { @include column(700px); }
-		&.sixteen { @include column(748px); }
-		&.one-third { @include column(236px); }
-		&.two-thirds { @include column(492px); }
-	}
-}
-#{$col} {
-	&.alpha { @include marg($r,$marg); }
-	&.omega { @include marg($l,$marg); }
-}
-}
-
-/* MOBILE(Portrait): 320px-767px
-================================ */
-
-@media only screen and (max-width: 767px) {
-
-$w-main: 300px;
-$marg: 2px;
-
-#{$con} {
-	width: 90%; max-width: #{$w-main};
-	#{$col} {
-		@include marg($r,$marg); @include marg($l,$marg);
-		&.one,
-		&.two,
-		&.three,
-		&.four,
-		&.five,
-		&.six,
-		&.seven,
-		&.eight,
-		&.nine,
-		&.ten,
-		&.eleven,
-		&.twelve,
-		&.thirteen,
-		&.fourteen,
-		&.fifteen,
-		&.sixteen,
-		&.one-third,
-		&.two-thirds { width: (($w-main -($marg * 2)) / $w-main) * 100%; }
-	}
-}
-#{$col} {
-	&.alpha { @include marg($r,$marg); }
-	&.omega { @include marg($l,$marg); }
-}
-}
-
-
-/* MOBILE(Landscape): 480px-767px
-================================= */
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-
-$w-main: 420px;
-$marg: 5px;
-
-#{$con} {
-	width: 90%; max-width: #{$w-main};
-	#{$col} {
-		@include marg($r,$marg); @include marg($l,$marg);
-		&.one,
-		&.two,
-		&.three,
-		&.four,
-		&.five,
-		&.six,
-		&.seven,
-		&.eight,
-		&.nine,
-		&.ten,
-		&.eleven,
-		&.twelve,
-		&.thirteen,
-		&.fourteen,
-		&.fifteen,
-		&.sixteen,
-		&.one-third,
-		&.two-thirds { width: (($w-main -($marg * 2)) / $w-main) * 100%; }
-	}
-}
-#{$col} {
-	&.alpha { @include marg($r,$marg); }
-	&.omega { @include marg($l,$marg); }
-}
-}
-
-
-/* CLEARING
-=========== */
-
-@mixin clear-main {
+//@extend-elements
+//original selectors
+//.clearfix:before, .clearfix:after, .row:before, .row:after
+%extend_1 {
+	content: '';
 	display: block;
 	visibility: hidden;
 	height: 0;
-}
-
-@mixin clear-both {
-	clear: both;
-}
-
-@mixin clear-plus {
 	overflow: hidden;
 	width: 0;
 }
 
-@mixin clear-content {
-	content: '';
-}
 
-/* Self Clearing Goodness */
-#{$con} {
+.container {
+	position: relative;
+	width: 75%;
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	.column {
+		float: left;
+		display: inline;
+		margin-right: 1.04167%;
+		margin-left: 1.04167%;
+		&.one {
+			width: 4.16667%;
+		}
+		&.two {
+			width: 10.41667%;
+		}
+		&.three {
+			width: 16.66667%;
+		}
+		&.four {
+			width: 22.91667%;
+		}
+		&.five {
+			width: 29.16667%;
+		}
+		&.six {
+			width: 35.41667%;
+		}
+		&.seven {
+			width: 41.66667%;
+		}
+		&.eight {
+			width: 47.91667%;
+		}
+		&.nine {
+			width: 54.16667%;
+		}
+		&.ten {
+			width: 60.41667%;
+		}
+		&.eleven {
+			width: 66.66667%;
+		}
+		&.twelve {
+			width: 72.91667%;
+		}
+		&.thirteen {
+			width: 79.16667%;
+		}
+		&.fourteen {
+			width: 85.41667%;
+		}
+		&.fifteen {
+			width: 91.66667%;
+		}
+		&.sixteen {
+			width: 97.91667%;
+		}
+		&.one-third {
+			width: 31.25%;
+		}
+		&.two-thirds {
+			width: 64.58333%;
+		}
+	}
 	&:after {
-		@include clear-content;
-		@include clear-main;
-		@include clear-both;
+		content: '';
+		display: block;
+		visibility: hidden;
+		height: 0;
+		clear: both;
 	}
 }
-
-/* Use clearfix class on parent to clear nested columns, or wrap each row of columns in a <div class="row"> */
-
-@mixin clear-nest {
+.column {
+	&.alpha {
+		margin-left: 0;
+	}
+	&.omega {
+		margin-right: 0;
+	}
+}
+.row {
+	margin-bottom: 2.08333%;
 	zoom: 1;
-	&:before, &:after {
-		@include clear-content;
-		@include clear-main;
-		@include clear-plus;
+	&:before {
+		@extend %extend_1;
 	}
 	&:after {
-		@include clear-both;
+		@extend %extend_1;
+		clear: both;
 	}
 }
-
-.clearfix, .row {
-	@include clear-nest;
+@media only screen and(min-width: 768px) and(max-width: 959px) {
+	.container {
+		width: 80%;
+		max-width: 768px;
+		.column {
+			margin-right: 1.04167%;
+			margin-left: 1.04167%;
+			&.one {
+				width: 2.91667%;
+			}
+			&.two {
+				width: 7.91667%;
+			}
+			&.three {
+				width: 12.91667%;
+			}
+			&.four {
+				width: 17.91667%;
+			}
+			&.five {
+				width: 22.91667%;
+			}
+			&.six {
+				width: 27.91667%;
+			}
+			&.seven {
+				width: 32.91667%;
+			}
+			&.eight {
+				width: 37.91667%;
+			}
+			&.nine {
+				width: 42.91667%;
+			}
+			&.ten {
+				width: 47.91667%;
+			}
+			&.eleven {
+				width: 52.91667%;
+			}
+			&.twelve {
+				width: 57.91667%;
+			}
+			&.thirteen {
+				width: 62.91667%;
+			}
+			&.fourteen {
+				width: 67.91667%;
+			}
+			&.fifteen {
+				width: 72.91667%;
+			}
+			&.sixteen {
+				width: 77.91667%;
+			}
+			&.one-third {
+				width: 24.58333%;
+			}
+			&.two-thirds {
+				width: 51.25%;
+			}
+		}
+	}
+	.column {
+		&.alpha {
+			margin-right: 1.04167%;
+		}
+		&.omega {
+			margin-left: 1.04167%;
+		}
+	}
 }
-
-/* You can also use a <br class="clear" /> to clear columns */
-
+@media only screen and(max-width: 767px) {
+	.container {
+		width: 90%;
+		max-width: 300px;
+		.column {
+			margin-right: 0.20833%;
+			margin-left: 0.20833%;
+			&.one {
+				width: 98.66667%;
+			}
+			&.two {
+				width: 98.66667%;
+			}
+			&.three {
+				width: 98.66667%;
+			}
+			&.four {
+				width: 98.66667%;
+			}
+			&.five {
+				width: 98.66667%;
+			}
+			&.six {
+				width: 98.66667%;
+			}
+			&.seven {
+				width: 98.66667%;
+			}
+			&.eight {
+				width: 98.66667%;
+			}
+			&.nine {
+				width: 98.66667%;
+			}
+			&.ten {
+				width: 98.66667%;
+			}
+			&.eleven {
+				width: 98.66667%;
+			}
+			&.twelve {
+				width: 98.66667%;
+			}
+			&.thirteen {
+				width: 98.66667%;
+			}
+			&.fourteen {
+				width: 98.66667%;
+			}
+			&.fifteen {
+				width: 98.66667%;
+			}
+			&.sixteen {
+				width: 98.66667%;
+			}
+			&.one-third {
+				width: 98.66667%;
+			}
+			&.two-thirds {
+				width: 98.66667%;
+			}
+		}
+	}
+	.column {
+		&.alpha {
+			margin-right: 0.20833%;
+		}
+		&.omega {
+			margin-left: 0.20833%;
+		}
+	}
+}
+@media only screen and(min-width: 480px) and(max-width: 767px) {
+	.container {
+		width: 90%;
+		max-width: 420px;
+		.column {
+			margin-right: 0.52083%;
+			margin-left: 0.52083%;
+			&.one {
+				width: 97.61905%;
+			}
+			&.two {
+				width: 97.61905%;
+			}
+			&.three {
+				width: 97.61905%;
+			}
+			&.four {
+				width: 97.61905%;
+			}
+			&.five {
+				width: 97.61905%;
+			}
+			&.six {
+				width: 97.61905%;
+			}
+			&.seven {
+				width: 97.61905%;
+			}
+			&.eight {
+				width: 97.61905%;
+			}
+			&.nine {
+				width: 97.61905%;
+			}
+			&.ten {
+				width: 97.61905%;
+			}
+			&.eleven {
+				width: 97.61905%;
+			}
+			&.twelve {
+				width: 97.61905%;
+			}
+			&.thirteen {
+				width: 97.61905%;
+			}
+			&.fourteen {
+				width: 97.61905%;
+			}
+			&.fifteen {
+				width: 97.61905%;
+			}
+			&.sixteen {
+				width: 97.61905%;
+			}
+			&.one-third {
+				width: 97.61905%;
+			}
+			&.two-thirds {
+				width: 97.61905%;
+			}
+		}
+	}
+	.column {
+		&.alpha {
+			margin-right: 0.52083%;
+		}
+		&.omega {
+			margin-left: 0.52083%;
+		}
+	}
+}
+.clearfix {
+	zoom: 1;
+	&:before {
+		@extend %extend_1;
+	}
+	&:after {
+		@extend %extend_1;
+		clear: both;
+	}
+}
 .clear {
-	@include clear-both;
-	@include clear-main;
-	@include clear-plus;
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+	width: 0;
 }

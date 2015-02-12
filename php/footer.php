@@ -1,15 +1,23 @@
 <div class="sixteen column">
 	<hr>
 </div>
-<div class="two-thirds column">
-	<p>Questions? Feel free to <a href="mailto:info@gennybean.com">email us</a> anytime!</p>
+<div class="three column">
+	<img class="scale" src="http://missjack.com/img/mj_logo_foot.png" alt="MissJack logo" /><br>
+    <p>&copy; <?php echo date("Y"); ?> MissJack</p>
 </div>
-<div class="one-third column">
-    <p>&copy; <?php echo date("Y"); ?> MissJack, all rights reserved.</p>
-	<p>website design by <a href="http://missjack.com">MissJack</a></p>
-    <details>
-    <summary>content credits</summary>
-    <p>All primary content is the intellectual property of Jacqualine Faria, unless otherwise noted.<br>
-Fonts & backgrounds used with permission, view their detailed individual attributions <a href="http://gennybean.com/attributions.php">here</a>.</p>
-	</details>
+<div class="ten column">
+	<h6>
+    	<span class="footnav"><a href="">page 1</a></span>
+        <span class="footnav"><a href="">page 2</a></span>
+        <span class="footnav"><a href="">page 3</a></span>
+        <span class="footnav"><a href="">page 4</a></span>
+    </h6>
+    <p>&nbsp;</p>
+    <p><a href="attributions.php">content credits</a></p>
 </div>
+<div class="three column">
+    <p>Questions? Comments? Kudos?<br>
+    &nbsp;</p>
+    <p><a class="button" href="mailto:jack@missjack.com" target="_blank" style="width:100%;">Email Me</a></p>
+</div>
+

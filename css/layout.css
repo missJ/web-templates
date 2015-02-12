@@ -1,0 +1,82 @@
+nav.horiz ul, nav.horiz ol {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.4em; }
+
+body {
+  background: #CCC url("../img/symphony.png") top left repeat;
+  color: #444;
+  font-family: Delicious, sans-serif; }
+
+.container {
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 1px 1px 3px #555;
+  background-color: #FEFEFE;
+  padding: 10px 0; }
+
+header {
+  font-weight: bold; }
+
+.left {
+  float: left;
+  margin-right: 10px; }
+
+h1 {
+  font-family: Jura, serif; }
+
+h2 {
+  font-family: Jura, serif; }
+
+h3 {
+  font-family: Jura, serif; }
+
+h4 {
+  font-family: Cantarell, sans-serif;
+  font-weight: normal; }
+
+h5 {
+  font-family: Cantarell, sans-serif;
+  font-style: italic; }
+
+h6 {
+  font-family: Cantarell, sans-serif; }
+
+nav.vert {
+  background: #FFF url("../img/45degreee_fabric.png") top left repeat;
+  border-radius: 4px 15px 15px 15px;
+  padding: 10px;
+  color: #404040; }
+nav.horiz {
+  text-align: right; }
+  nav.horiz ul li {
+    display: inline-block;
+    margin-left: 20px; }
+  nav.horiz ol li {
+    display: inline-block;
+    margin-left: 20px; }
+
+.logo {
+  background: #FFF url("../img/norwegian_rose.png") top left repeat;
+  border-radius: 15px 15px 4px 15px;
+  color: #404040;
+  height: 70px;
+  width: 70px; }
+
+.cat {
+  width: 300px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px 2px 15px 15px;
+  box-shadow: -1px 1px 3px #000; }
+
+.footnav:first-child::before {
+  content: ''; }
+
+.footnav::before {
+  content: ' '; }
+
+footer div {
+  text-align: center; }
+
+/*# sourceMappingURL=layout.css.map */

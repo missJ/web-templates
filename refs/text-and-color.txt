@@ -1,0 +1,17 @@
+https://github.com/missJ/web-templates.git
+
+p = primary text (16px)
+h1 = title (42px)
+h2 = headlines (26px)
+h3 = sub-headlines (20px)
+h4 = alt sub-headlines (20px)
+h5 = alt primary text (16px)
+h6 = secondary text (13px)
+
+
+
+blue 001166 (base1) (triad2)
+green 116600 (triad1) (base2)  648c23
+red 6600011 (triad1) (triad2)
+gold? 665500 (complement1)
+purple 550066 (complement2)
